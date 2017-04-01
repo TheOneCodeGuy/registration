@@ -79,8 +79,15 @@ if((month == 4 || month == 6 ||month == 9 ||month == 11) && date>30)
 
     var progress = (7-err)/7*100;
     if(err==0)
+    {
       alert("You have successfully filled the form");
-    $("#prog").attr('aria-valuenow',progress).css("width",progress + "%").val(progress + "% complete" );
+      $( "#target" ).submit(function( event ) {
+      event.preventDefault();
+      });
+      
+    }
+      
+      $("#prog").attr('aria-valuenow',progress).css("width",progress + "%").val(progress + "% complete" );
 
 
 };
@@ -88,5 +95,6 @@ if((month == 4 || month == 6 ||month == 9 ||month == 11) && date>30)
 $(document).ready( function() {
 $("#submit").click( function () {
     validiate();
+  
   });
 });
